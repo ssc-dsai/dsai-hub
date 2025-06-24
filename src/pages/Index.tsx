@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Search, MessageSquare, PenTool, FileText, Image, Presentation, Video, Mic, Search as SearchIcon, BarChart3, Shield, Database, Cpu, Brain, Users, Lock } from 'lucide-react';
+import { Search, MessageSquare, PenTool, FileText, Image, Presentation, Video, Mic, Search as SearchIcon, BarChart3, Shield, Database, Cpu, Brain, Users, Lock, CheckSquare, Zap } from 'lucide-react';
 import ToolCard from '@/components/ToolCard';
 import Header from '@/components/Header';
 import CategoryFilter from '@/components/CategoryFilter';
 import Footer from '@/components/Footer';
-import StatsSection from '@/components/StatsSection';
 
 const Index = () => {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -12,164 +11,133 @@ const Index = () => {
 
   const tools = [
     {
-      id: 'enterprise-chatbot',
-      title: 'Enterprise AI Assistant',
-      description: 'Secure conversational AI for internal knowledge management and employee support with enterprise SSO integration',
+      id: 'canchat',
+      title: 'CanChat',
+      description: 'Internal conversational AI assistant for answering questions, brainstorming, and helping with daily tasks across all departments.',
       icon: MessageSquare,
       category: 'Communication',
       status: 'Live' as const,
-      features: ['Enterprise SSO', 'Data governance', 'Audit logging', 'Custom knowledge base'],
-      gradient: 'bg-gradient-to-r from-blue-600 to-cyan-600',
-      image: '/placeholder.svg',
-      department: 'IT Services',
+      features: ['Natural conversations', 'Task assistance', 'Knowledge lookup', 'Multi-department support'],
+      gradient: 'bg-gradient-to-r from-green-600 to-teal-600',
+      image: '/screenshots/canchat-home.png',
+      department: 'All Teams',
       classification: 'Internal Use',
-      owner: 'Digital Workplace Team',
+      owner: 'AI Team',
       lastUpdated: '2 days ago',
-      userCount: 1247
+      userCount: 1247,
+      featured: true
     },
     {
-      id: 'document-intelligence',
-      title: 'Document Intelligence Suite',
-      description: 'AI-powered document processing, extraction, and analysis for enterprise document workflows',
-      icon: FileText,
-      category: 'Document Processing',
-      status: 'Live' as const,
-      features: ['OCR processing', 'Data extraction', 'Classification', 'Workflow integration'],
-      gradient: 'bg-gradient-to-r from-emerald-600 to-teal-600',
-      image: '/placeholder.svg',
-      department: 'Operations',
-      classification: 'Confidential',
-      owner: 'Process Automation Team',
+      id: 'ssc-canvas',
+      title: 'SSC Canvas',
+      description: 'Visual collaboration workspace for creating diagrams, wireframes, and brainstorming sessions with intelligent design assistance.',
+      icon: PenTool,
+      category: 'Creative',
+      status: 'Beta' as const,
+      features: ['Smart drawing tools', 'Template library', 'Real-time collaboration', 'Design suggestions'],
+      gradient: 'bg-gradient-to-r from-purple-600 to-pink-600',
+      image: '/screenshots/ssc-canvas.webp',
+      department: 'Design & Product',
+      classification: 'Internal Use',
+      owner: 'Design Team',
       lastUpdated: '1 week ago',
-      userCount: 892
+      userCount: 432
     },
     {
-      id: 'predictive-analytics',
-      title: 'Predictive Analytics Engine',
-      description: 'Machine learning platform for business forecasting, risk assessment, and strategic planning',
-      icon: BarChart3,
-      category: 'Analytics',
-      status: 'Live' as const,
-      features: ['Time series forecasting', 'Risk modeling', 'Custom dashboards', 'API integration'],
-      gradient: 'bg-gradient-to-r from-violet-600 to-purple-600',
-      image: '/placeholder.svg',
-      department: 'Business Intelligence',
-      classification: 'Restricted',
-      owner: 'Data Science Team',
+      id: 'ssc-tasking',
+      title: 'SSC Tasking',
+      description: 'AI-powered task management and workflow optimization tool that helps teams organize, prioritize, and track their work.',
+      icon: CheckSquare,
+      category: 'Productivity',
+      status: 'Beta' as const,
+      features: ['Smart task organization', 'Priority suggestions', 'Workflow automation', 'Team coordination'],
+      gradient: 'bg-gradient-to-r from-blue-600 to-cyan-600',
+      image: '/screenshots/ssc-tasking.jpeg',
+      department: 'All Teams',
+      classification: 'Internal Use',
+      owner: 'Productivity Team',
       lastUpdated: '3 days ago',
-      userCount: 445
+      userCount: 678
     },
     {
-      id: 'compliance-monitor',
-      title: 'AI Compliance Monitor',
-      description: 'Automated compliance checking and regulatory analysis for enterprise policies and procedures',
-      icon: Shield,
-      category: 'Compliance',
-      status: 'Live' as const,
-      features: ['Policy scanning', 'Risk assessment', 'Compliance reporting', 'Alert system'],
-      gradient: 'bg-gradient-to-r from-red-600 to-orange-600',
-      image: '/placeholder.svg',
-      department: 'Legal & Compliance',
-      classification: 'Confidential',
-      owner: 'Governance Team',
+      id: 'pixieprompt',
+      title: 'PixiePrompt',
+      description: 'AI image generation tool for creating visuals, mockups, and design assets for internal presentations and materials.',
+      icon: Image,
+      category: 'Creative',
+      status: 'Beta' as const,
+      features: ['Text-to-image generation', 'Style customization', 'Brand guidelines', 'Multiple formats'],
+      gradient: 'bg-gradient-to-r from-orange-600 to-red-600',
+      image: '/screenshots/pixie-prompt.webp',
+      department: 'Marketing & Design',
+      classification: 'Internal Use',
+      owner: 'Creative Team',
       lastUpdated: '5 days ago',
       userCount: 234
     },
     {
-      id: 'data-fabric',
-      title: 'Enterprise Data Fabric',
-      description: 'Intelligent data discovery, cataloging, and governance platform for enterprise data assets',
-      icon: Database,
-      category: 'Data Management',
-      status: 'Beta' as const,
-      features: ['Data cataloging', 'Lineage tracking', 'Quality monitoring', 'Access control'],
-      gradient: 'bg-gradient-to-r from-indigo-600 to-blue-600',
-      image: '/placeholder.svg',
-      department: 'Data Engineering',
+      id: 'docwise',
+      title: 'DocWise',
+      description: 'Upload and chat with your documents. Get instant answers and insights from PDFs, reports, and knowledge base articles.',
+      icon: FileText,
+      category: 'Document Processing',
+      status: 'Live' as const,
+      features: ['Document upload', 'Smart search', 'Context-aware answers', 'Multiple file formats'],
+      gradient: 'bg-gradient-to-r from-emerald-600 to-teal-600',
+      image: '/screenshots/docwise-interface.png',
+      department: 'All Teams',
       classification: 'Internal Use',
-      owner: 'Data Platform Team',
+      owner: 'AI Team',
       lastUpdated: '1 day ago',
-      userCount: 156
+      userCount: 892
     },
     {
-      id: 'code-assistant',
-      title: 'Enterprise Code Assistant',
-      description: 'AI-powered development assistant with enterprise security and code quality enforcement',
+      id: 'code-buddy',
+      title: 'Code Buddy',
+      description: 'AI coding assistant for code generation, debugging, documentation, and code reviews across multiple programming languages.',
       icon: Cpu,
       category: 'Development',
-      status: 'Beta' as const,
-      features: ['Code generation', 'Security scanning', 'Best practices', 'Documentation'],
+      status: 'Live' as const,
+      features: ['Code generation', 'Bug detection', 'Documentation help', 'Code review assistance'],
       gradient: 'bg-gradient-to-r from-green-600 to-emerald-600',
-      image: '/placeholder.svg',
+      image: '/screenshots/code-buddy-editor.png',
       department: 'Engineering',
       classification: 'Internal Use',
-      owner: 'Platform Engineering',
+      owner: 'Engineering Team',
       lastUpdated: '4 days ago',
-      userCount: 678
-    },
-    {
-      id: 'meeting-intelligence',
-      title: 'Meeting Intelligence Platform',
-      description: 'AI-powered meeting transcription, summarization, and action item extraction for enterprise meetings',
-      icon: Mic,
-      category: 'Communication',
-      status: 'Coming Soon' as const,
-      features: ['Real-time transcription', 'Action items', 'Meeting summaries', 'Calendar integration'],
-      gradient: 'bg-gradient-to-r from-amber-600 to-yellow-600',
-      image: '/placeholder.svg',
-      department: 'Collaboration Tools',
-      classification: 'Internal Use',
-      owner: 'Unified Communications',
-      lastUpdated: 'In Development',
-      userCount: 0
-    },
-    {
-      id: 'security-analyzer',
-      title: 'AI Security Analyzer',
-      description: 'Advanced threat detection and security incident analysis using machine learning algorithms',
-      icon: Lock,
-      category: 'Security',
-      status: 'Coming Soon' as const,
-      features: ['Threat detection', 'Incident analysis', 'Behavioral monitoring', 'Risk scoring'],
-      gradient: 'bg-gradient-to-r from-slate-600 to-gray-600',
-      image: '/placeholder.svg',
-      department: 'Cybersecurity',
-      classification: 'Highly Restricted',
-      owner: 'Security Operations Center',
-      lastUpdated: 'In Development',
-      userCount: 0
-    },
-    {
-      id: 'hr-assistant',
-      title: 'HR Intelligence Platform',
-      description: 'AI-powered human resources assistant for employee services, policy guidance, and workforce analytics',
-      icon: Users,
-      category: 'Human Resources',
-      status: 'Beta' as const,
-      features: ['Policy guidance', 'Employee self-service', 'Workforce analytics', 'Performance insights'],
-      gradient: 'bg-gradient-to-r from-pink-600 to-rose-600',
-      image: '/placeholder.svg',
-      department: 'Human Resources',
-      classification: 'Confidential',
-      owner: 'HR Digital Services',
-      lastUpdated: '6 days ago',
-      userCount: 324
-    },
-    {
-      id: 'visual-generator',
-      title: 'Enterprise Visual Generator',
-      description: 'Brand-compliant AI image and presentation generation for internal communications and materials',
-      icon: Presentation,
-      category: 'Creative',
-      status: 'Live' as const,
-      features: ['Brand compliance', 'Template generation', 'Multi-format export', 'Asset management'],
-      gradient: 'bg-gradient-to-r from-cyan-600 to-blue-600',
-      image: '/placeholder.svg',
-      department: 'Corporate Communications',
-      classification: 'Internal Use',
-      owner: 'Brand & Marketing',
-      lastUpdated: '1 week ago',
       userCount: 567
+    },
+    {
+      id: 'meetmind',
+      title: 'MeetMind',
+      description: 'Automatically transcribe meetings, generate summaries, and extract action items to keep teams aligned and productive.',
+      icon: Mic,
+      category: 'Productivity',
+      status: 'Coming Soon' as const,
+      features: ['Meeting transcription', 'Smart summaries', 'Action item extraction', 'Calendar integration'],
+      gradient: 'bg-gradient-to-r from-amber-600 to-yellow-600',
+      image: '/screenshots/meetmind-mockup.png',
+      department: 'All Teams',
+      classification: 'Internal Use',
+      owner: 'Productivity Team',
+      lastUpdated: 'In Development',
+      userCount: 0
+    },
+    {
+      id: 'insight-engine',
+      title: 'Insight Engine',
+      description: 'Upload spreadsheets and datasets to get instant analysis, visualizations, and insights with natural language queries.',
+      icon: BarChart3,
+      category: 'Analytics',
+      status: 'Coming Soon' as const,
+      features: ['Data visualization', 'Natural language queries', 'Automated insights', 'Export reports'],
+      gradient: 'bg-gradient-to-r from-violet-600 to-purple-600',
+      image: '/screenshots/insight-engine-charts.png',
+      department: 'Business & Analytics',
+      classification: 'Internal Use',
+      owner: 'Data Team',
+      lastUpdated: 'In Development',
+      userCount: 0
     }
   ];
 
@@ -189,25 +157,17 @@ const Index = () => {
       <div className="container mx-auto px-6 py-8">
         <Header />
         
-        <StatsSection />
-        
         {/* Search Bar */}
         <div className="max-w-3xl mx-auto mb-12">
           <div className="relative">
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
             <input
               type="text"
-              placeholder="Search tools, departments, or owners..."
+              placeholder="Search AI tools..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-12 pr-6 py-4 bg-card/50 border border-border rounded-xl placeholder:text-muted-foreground focus:outline-none focus:border-blue-500 focus:bg-card/70 transition-all duration-200 text-base"
             />
-            <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
-              <div className="flex items-center space-x-2 text-xs text-muted-foreground">
-                <span>Enterprise Search</span>
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -234,6 +194,7 @@ const Index = () => {
               classification={tool.classification}
               owner={tool.owner}
               userCount={tool.userCount}
+              featured={tool.featured}
             />
           ))}
         </div>
@@ -242,7 +203,7 @@ const Index = () => {
           <div className="text-center py-16">
             <div className="text-muted-foreground text-6xl mb-4">🔍</div>
             <h3 className="text-xl font-semibold text-foreground mb-2">No tools found</h3>
-            <p className="text-muted-foreground">Try a different search term, category, or department filter</p>
+            <p className="text-muted-foreground">Try a different search term or category</p>
           </div>
         )}
       </div>

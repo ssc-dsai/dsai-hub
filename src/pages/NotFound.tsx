@@ -44,7 +44,7 @@ const NotFound = () => {
               className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700"
             >
               <Home className="h-4 w-4 mr-2" />
-              Return to Tools Hub
+              Return to DSAI Hub
             </Button>
             
             <Button 
