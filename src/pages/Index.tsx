@@ -111,20 +111,20 @@ const Index = () => {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-900 to-violet-900">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-violet-50 dark:to-violet-950">
       <div className="container mx-auto px-6 py-12">
         <Header />
         
         {/* Search Bar */}
         <div className="max-w-2xl mx-auto mb-12">
           <div className="relative">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
             <input
               type="text"
               placeholder="Search AI tools..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-6 py-4 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-violet-500 focus:bg-gray-800/70"
+              className="w-full pl-12 pr-6 py-4 bg-card/50 border border-border rounded-xl placeholder:text-muted-foreground focus:outline-none focus:border-violet-500 focus:bg-card/70 transition-all duration-200"
             />
           </div>
         </div>
@@ -154,9 +154,9 @@ const Index = () => {
 
         {filteredTools.length === 0 && (
           <div className="text-center py-16">
-            <div className="text-gray-400 text-6xl mb-4">🔍</div>
-            <h3 className="text-xl font-semibold text-gray-300 mb-2">No tools found</h3>
-            <p className="text-gray-400">Try a different search term or category</p>
+            <div className="text-muted-foreground text-6xl mb-4">🔍</div>
+            <h3 className="text-xl font-semibold text-foreground mb-2">No tools found</h3>
+            <p className="text-muted-foreground">Try a different search term or category</p>
           </div>
         )}
       </div>

@@ -1,9 +1,12 @@
 
 import React from 'react';
-import { Bot, User, LogIn } from 'lucide-react';
+import { Bot, User, LogIn, Sun, Moon } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import { useTheme } from 'next-themes';
 
 const Header = () => {
+  const { theme, setTheme } = useTheme();
+
   return (
     <div className="mb-16">
       {/* Navigation Bar */}
@@ -15,11 +18,21 @@ const Header = () => {
               <Bot className="h-6 w-6 text-white" />
             </div>
           </div>
-          <span className="text-xl font-bold text-white">IntelliHub</span>
+          <span className="text-xl font-bold">IntelliHub</span>
         </div>
 
         <div className="flex items-center space-x-4">
-          <Button variant="ghost" size="sm" className="text-gray-300 hover:text-white hover:bg-white/10">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            className="hover:bg-accent"
+          >
+            <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            <span className="sr-only">Toggle theme</span>
+          </Button>
+          <Button variant="ghost" size="sm" className="hover:bg-accent">
             <LogIn className="h-4 w-4 mr-2" />
             Login
           </Button>
@@ -32,10 +45,10 @@ const Header = () => {
 
       {/* Hero Section */}
       <div className="text-center">
-        <h1 className="text-6xl font-bold text-white mb-4">
+        <h1 className="text-6xl font-bold mb-4">
           Internal AI Tools Hub
         </h1>
-        <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
+        <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-8">
           Discover and access our comprehensive suite of AI-powered tools designed to enhance productivity and creativity.
         </p>
       </div>

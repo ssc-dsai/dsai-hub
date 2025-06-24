@@ -21,9 +21,9 @@ const ToolCard = ({ id, title, description, status, image }: ToolCardProps) => {
   const navigate = useNavigate();
   
   const statusColors = {
-    'Live': 'bg-green-500/20 text-green-400 border-green-500/30',
-    'Beta': 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30',
-    'Coming Soon': 'bg-blue-500/20 text-blue-400 border-blue-500/30'
+    'Live': 'bg-green-500/20 text-green-500 border-green-500/30 dark:text-green-400',
+    'Beta': 'bg-yellow-500/20 text-yellow-600 border-yellow-500/30 dark:text-yellow-400',
+    'Coming Soon': 'bg-blue-500/20 text-blue-600 border-blue-500/30 dark:text-blue-400'
   };
 
   const handleCardClick = () => {
@@ -32,28 +32,29 @@ const ToolCard = ({ id, title, description, status, image }: ToolCardProps) => {
 
   return (
     <Card 
-      className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 overflow-hidden bg-gray-800/50 backdrop-blur-sm border border-gray-700 cursor-pointer hover:border-violet-500/50"
+      className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-border/50 hover:border-violet-200 dark:hover:border-violet-800 overflow-hidden bg-card/80 backdrop-blur-sm cursor-pointer"
       onClick={handleCardClick}
     >
-      <div className="aspect-video bg-gray-700 flex items-center justify-center overflow-hidden">
+      <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center overflow-hidden relative">
         <img 
           src={image} 
           alt={title}
-          className="w-full h-full object-cover opacity-50"
+          className="w-full h-full object-cover opacity-60 dark:opacity-40"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
       </div>
       <CardHeader className="pb-2">
         <div className="flex items-center justify-between mb-2">
-          <CardTitle className="text-lg font-bold text-white group-hover:text-gray-200 transition-colors">
+          <CardTitle className="text-lg font-bold group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
             {title}
           </CardTitle>
-          <Badge variant="outline" className={`${statusColors[status]} text-xs`}>
+          <Badge variant="outline" className={`${statusColors[status]} text-xs font-medium`}>
             {status}
           </Badge>
         </div>
       </CardHeader>
       <CardContent className="pt-0">
-        <p className="text-gray-400 text-sm leading-relaxed">{description}</p>
+        <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
       </CardContent>
     </Card>
   );
