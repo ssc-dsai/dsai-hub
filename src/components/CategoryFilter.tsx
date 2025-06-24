@@ -18,8 +18,8 @@ const CategoryFilter = ({ categories, activeCategory, onCategoryChange }: Catego
           onClick={() => onCategoryChange(category)}
           className={`px-6 py-2 transition-all duration-300 ${
             activeCategory === category
-              ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-              : 'hover:shadow-md hover:scale-105'
+              ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg border-transparent'
+              : 'bg-white/5 text-gray-300 border-white/20 hover:bg-white/10 hover:text-white hover:scale-105'
           }`}
         >
           {category}

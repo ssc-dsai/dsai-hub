@@ -12,6 +12,7 @@ const Index = () => {
 
   const tools = [
     {
+      id: 'ai-chat-assistant',
       title: 'AI Chat Assistant',
       description: 'Intelligent conversational AI that helps with questions, brainstorming, and problem-solving across various domains.',
       icon: MessageSquare,
@@ -21,6 +22,7 @@ const Index = () => {
       gradient: 'bg-gradient-to-r from-green-500 to-teal-500'
     },
     {
+      id: 'ai-canvas',
       title: 'AI Canvas',
       description: 'Visual collaboration workspace with AI-powered drawing, diagramming, and creative assistance tools.',
       icon: PenTool,
@@ -30,6 +32,7 @@ const Index = () => {
       gradient: 'bg-gradient-to-r from-purple-500 to-pink-500'
     },
     {
+      id: 'document-generator',
       title: 'Document Generator',
       description: 'Automated document creation and editing with AI-powered content generation and formatting.',
       icon: FileText,
@@ -39,6 +42,7 @@ const Index = () => {
       gradient: 'bg-gradient-to-r from-blue-500 to-cyan-500'
     },
     {
+      id: 'text-to-image',
       title: 'Text to Image',
       description: 'Generate stunning images from text descriptions using advanced AI image generation models.',
       icon: Image,
@@ -48,6 +52,7 @@ const Index = () => {
       gradient: 'bg-gradient-to-r from-orange-500 to-red-500'
     },
     {
+      id: 'text-to-slides',
       title: 'Text to Slides',
       description: 'Transform your text content into professional presentations with AI-designed layouts and visuals.',
       icon: Presentation,
@@ -57,6 +62,7 @@ const Index = () => {
       gradient: 'bg-gradient-to-r from-indigo-500 to-purple-500'
     },
     {
+      id: 'video-analyzer',
       title: 'Video Analyzer',
       description: 'AI-powered video content analysis, transcription, and insights generation for multimedia content.',
       icon: Video,
@@ -66,6 +72,7 @@ const Index = () => {
       gradient: 'bg-gradient-to-r from-emerald-500 to-green-500'
     },
     {
+      id: 'voice-assistant',
       title: 'Voice Assistant',
       description: 'Speech-to-text and text-to-speech AI tool for hands-free interaction and accessibility.',
       icon: Mic,
@@ -75,6 +82,7 @@ const Index = () => {
       gradient: 'bg-gradient-to-r from-yellow-500 to-orange-500'
     },
     {
+      id: 'smart-search',
       title: 'Smart Search',
       description: 'Intelligent search engine that understands context and provides relevant, personalized results.',
       icon: Search,
@@ -92,7 +100,7 @@ const Index = () => {
     : tools.filter(tool => tool.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <div className="container mx-auto px-6 py-12">
         <Header />
         <StatsSection />
@@ -106,6 +114,7 @@ const Index = () => {
           {filteredTools.map((tool, index) => (
             <ToolCard
               key={index}
+              id={tool.id}
               title={tool.title}
               description={tool.description}
               icon={tool.icon}
@@ -120,8 +129,8 @@ const Index = () => {
         {filteredTools.length === 0 && (
           <div className="text-center py-16">
             <div className="text-gray-400 text-6xl mb-4">🔍</div>
-            <h3 className="text-xl font-semibold text-gray-600 mb-2">No tools found</h3>
-            <p className="text-gray-500">Try selecting a different category</p>
+            <h3 className="text-xl font-semibold text-gray-300 mb-2">No tools found</h3>
+            <p className="text-gray-400">Try selecting a different category</p>
           </div>
         )}
       </div>
