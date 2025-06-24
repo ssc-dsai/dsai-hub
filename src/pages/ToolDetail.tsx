@@ -1,69 +1,83 @@
-
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, Users, Clock, CheckCircle, Mail, User } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Users, Clock, CheckCircle, Mail, User, Building2, Shield, Activity, BarChart3, MessageSquare, PenTool, FileText, Image, Presentation, Video, Mic, Search, Database, Cpu, Lock } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { MessageSquare, PenTool, FileText, Image, Presentation, Video, Mic, Search } from 'lucide-react';
 
 const ToolDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
   const tools = {
-    'ai-chat-assistant': {
-      title: 'AI Chat Assistant',
-      description: 'An intelligent conversational AI system that helps with questions, brainstorming, and problem-solving across various domains. This tool leverages advanced natural language processing to understand context and provide meaningful responses.',
+    'enterprise-chatbot': {
+      title: 'Enterprise AI Assistant',
+      description: 'A secure conversational AI system designed for internal knowledge management and employee support. This enterprise-grade assistant integrates with our SSO infrastructure and maintains complete audit trails for compliance.',
       icon: MessageSquare,
       category: 'Communication',
       status: 'Live' as const,
-      features: ['Natural language processing', 'Context awareness', 'Multi-language support', 'Real-time responses'],
-      gradient: 'bg-gradient-to-r from-green-500 to-teal-500',
-      users: '150+',
+      features: ['Enterprise SSO', 'Data governance', 'Audit logging', 'Custom knowledge base', 'Multi-department training', 'Compliance reporting'],
+      gradient: 'bg-gradient-to-r from-blue-600 to-cyan-600',
+      department: 'IT Services',
+      classification: 'Internal Use',
+      owner: 'Digital Workplace Team',
+      userCount: 1247,
       lastUpdated: '2 days ago',
-      classification: 'Protected A',
       teamMembers: [
-        { name: 'Sarah Chen', role: 'Lead Developer', initials: 'SC', avatar: 'https://images.unsplash.com/photo-1494790108755-2616b9c6c4db?w=100&h=100&fit=crop&crop=face' },
-        { name: 'Mike Johnson', role: 'ML Engineer', initials: 'MJ', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face' },
-        { name: 'Emily Rodriguez', role: 'UX Designer', initials: 'ER', avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&h=100&fit=crop&crop=face' }
+        { name: 'Sarah Chen', role: 'Technical Lead', initials: 'SC', avatar: '/placeholder.svg', email: 'sarah.chen@company.com' },
+        { name: 'Mike Rodriguez', role: 'AI Engineer', initials: 'MR', avatar: '/placeholder.svg', email: 'mike.rodriguez@company.com' },
+        { name: 'Emily Watson', role: 'Product Manager', initials: 'EW', avatar: '/placeholder.svg', email: 'emily.watson@company.com' }
       ],
-      contactEmail: 'chat-team@company.com',
-      screenshots: ['/placeholder.svg', '/placeholder.svg', '/placeholder.svg']
+      contactEmail: 'dsai-chatbot@company.com',
+      screenshots: ['/placeholder.svg', '/placeholder.svg', '/placeholder.svg'],
+      supportLevel: 'Business Hours',
+      uptime: '99.9%',
+      avgResponseTime: '0.8s',
+      securityClearance: 'Level 2',
+      dataResidency: 'On-premises',
+      integrations: ['Active Directory', 'SharePoint', 'Teams', 'ServiceNow']
     },
-    'ai-canvas': {
-      title: 'AI Canvas',
-      description: 'A comprehensive visual collaboration workspace enhanced with AI-powered drawing, diagramming, and creative assistance tools. Perfect for brainstorming sessions, wireframing, and creative projects.',
-      icon: PenTool,
-      category: 'Creative',
+    'document-intelligence': {
+      title: 'Document Intelligence Suite',
+      description: 'Advanced AI-powered document processing platform that handles extraction, classification, and analysis of enterprise documents while maintaining strict data governance and audit compliance.',
+      icon: FileText,
+      category: 'Document Processing',
       status: 'Live' as const,
-      features: ['Smart drawing tools', 'Auto-completion', 'Collaborative editing', 'Template library'],
-      gradient: 'bg-gradient-to-r from-purple-500 to-pink-500',
-      users: '80+',
+      features: ['OCR processing', 'Data extraction', 'Classification', 'Workflow integration', 'Batch processing', 'Custom templates'],
+      gradient: 'bg-gradient-to-r from-emerald-600 to-teal-600',
+      department: 'Operations',
+      classification: 'Confidential',
+      owner: 'Process Automation Team',
+      userCount: 892,
       lastUpdated: '1 week ago',
-      classification: 'Protected A',
       teamMembers: [
-        { name: 'David Kim', role: 'Frontend Lead', initials: 'DK', avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face' },
-        { name: 'Lisa Wang', role: 'AI Specialist', initials: 'LW', avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face' },
-        { name: 'Tom Brown', role: 'Product Manager', initials: 'TB', avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face' }
+        { name: 'David Kim', role: 'Solutions Architect', initials: 'DK', avatar: '/placeholder.svg', email: 'david.kim@company.com' },
+        { name: 'Lisa Wang', role: 'ML Engineer', initials: 'LW', avatar: '/placeholder.svg', email: 'lisa.wang@company.com' },
+        { name: 'James Wilson', role: 'Business Analyst', initials: 'JW', avatar: '/placeholder.svg', email: 'james.wilson@company.com' }
       ],
-      contactEmail: 'canvas-team@company.com',
-      screenshots: ['/placeholder.svg', '/placeholder.svg', '/placeholder.svg']
-    },
-    // ... other tools would be here with similar structure
+      contactEmail: 'doc-intelligence@company.com',
+      screenshots: ['/placeholder.svg', '/placeholder.svg', '/placeholder.svg'],
+      supportLevel: '24/7',
+      uptime: '99.95%',
+      avgResponseTime: '1.2s',
+      securityClearance: 'Level 3',
+      dataResidency: 'On-premises',
+      integrations: ['ECM System', 'SAP', 'Oracle', 'Azure AD']
+    }
   };
 
   const tool = tools[id as keyof typeof tools];
 
   if (!tool) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-background via-background to-violet-50 dark:to-violet-950 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-background via-background to-blue-50 dark:to-blue-950 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Tool Not Found</h1>
-          <Button onClick={() => navigate('/')} className="bg-gradient-to-r from-violet-600 to-purple-600">
-            Back to Home
+          <p className="text-muted-foreground mb-6">The requested tool is not available or has been restricted.</p>
+          <Button onClick={() => navigate('/')} className="bg-gradient-to-r from-blue-600 to-cyan-600">
+            Back to Tools Hub
           </Button>
         </div>
       </div>
@@ -71,10 +85,16 @@ const ToolDetail = () => {
   }
 
   const Icon = tool.icon;
+  const classificationColors = {
+    'Internal Use': 'bg-green-500/20 text-green-600 border-green-500/30',
+    'Confidential': 'bg-amber-500/20 text-amber-600 border-amber-500/30',
+    'Restricted': 'bg-orange-500/20 text-orange-600 border-orange-500/30',
+    'Highly Restricted': 'bg-red-500/20 text-red-600 border-red-500/30'
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-violet-50 dark:to-violet-950">
-      <div className="container mx-auto px-6 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-blue-50 dark:to-blue-950">
+      <div className="container mx-auto px-6 py-8">
         {/* Header */}
         <div className="flex items-center mb-8">
           <Button 
@@ -83,8 +103,18 @@ const ToolDetail = () => {
             className="hover:bg-accent mr-4"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Tools
+            Back to Tools Hub
           </Button>
+          <div className="flex items-center space-x-2 ml-auto">
+            <Badge className="bg-green-500/20 text-green-600 border-green-500/30">
+              <Activity className="h-3 w-3 mr-1" />
+              {tool.uptime} Uptime
+            </Badge>
+            <Badge variant="outline" className={classificationColors[tool.classification as keyof typeof classificationColors]}>
+              <Shield className="h-3 w-3 mr-1" />
+              {tool.classification}
+            </Badge>
+          </div>
         </div>
 
         {/* Tool Header */}
@@ -95,21 +125,41 @@ const ToolDetail = () => {
                 <Icon className="h-12 w-12" />
               </div>
               <div className="flex-1">
-                <div className="flex items-center gap-3 mb-2">
+                <div className="flex items-center gap-3 mb-3">
                   <h1 className="text-4xl font-bold">{tool.title}</h1>
                   <Badge variant="outline" className="bg-green-500/20 text-green-500 border-green-500/30 dark:text-green-400">
                     {tool.status}
                   </Badge>
                 </div>
-                <p className="text-xl text-muted-foreground mb-4">{tool.description}</p>
-                <div className="flex items-center gap-6 text-sm text-muted-foreground">
+                <p className="text-lg text-muted-foreground mb-4">{tool.description}</p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                   <div className="flex items-center">
-                    <Users className="h-4 w-4 mr-1" />
-                    <span>{tool.users} users</span>
+                    <Users className="h-4 w-4 mr-2 text-blue-500" />
+                    <div>
+                      <div className="font-medium">{tool.userCount.toLocaleString()}</div>
+                      <div className="text-xs text-muted-foreground">Active Users</div>
+                    </div>
                   </div>
                   <div className="flex items-center">
-                    <Clock className="h-4 w-4 mr-1" />
-                    <span>Updated {tool.lastUpdated}</span>
+                    <Clock className="h-4 w-4 mr-2 text-green-500" />
+                    <div>
+                      <div className="font-medium">{tool.avgResponseTime}</div>
+                      <div className="text-xs text-muted-foreground">Avg Response</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center">
+                    <Building2 className="h-4 w-4 mr-2 text-purple-500" />
+                    <div>
+                      <div className="font-medium">{tool.department}</div>
+                      <div className="text-xs text-muted-foreground">Department</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center">
+                    <Shield className="h-4 w-4 mr-2 text-orange-500" />
+                    <div>
+                      <div className="font-medium">{tool.securityClearance}</div>
+                      <div className="text-xs text-muted-foreground">Security Level</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -119,15 +169,28 @@ const ToolDetail = () => {
           <div className="lg:w-80">
             <Card className="bg-card/50 backdrop-blur-sm border border-border">
               <CardHeader>
-                <CardTitle>Get Started</CardTitle>
+                <CardTitle className="flex items-center">
+                  <ExternalLink className="h-4 w-4 mr-2" />
+                  Access Tool
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <Button className="w-full bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  Launch Tool
+                <Button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700">
+                  Launch Application
                 </Button>
                 <div className="text-xs text-muted-foreground text-center">
-                  Internal tool - no external access required
+                  <div className="mb-2">Requires enterprise authentication</div>
+                  <div className="flex items-center justify-center space-x-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span>Connected to corporate network</span>
+                  </div>
+                </div>
+                <div className="pt-3 border-t border-border">
+                  <div className="text-xs space-y-1">
+                    <div><strong>Support:</strong> {tool.supportLevel}</div>
+                    <div><strong>Data Residency:</strong> {tool.dataResidency}</div>
+                    <div><strong>Last Updated:</strong> {tool.lastUpdated}</div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -140,7 +203,7 @@ const ToolDetail = () => {
             {/* Features */}
             <Card className="bg-card/50 backdrop-blur-sm border border-border">
               <CardHeader>
-                <CardTitle>Key Features</CardTitle>
+                <CardTitle>Enterprise Features</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid md:grid-cols-2 gap-4">
@@ -154,10 +217,26 @@ const ToolDetail = () => {
               </CardContent>
             </Card>
 
+            {/* Integrations */}
+            <Card className="bg-card/50 backdrop-blur-sm border border-border">
+              <CardHeader>
+                <CardTitle>System Integrations</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  {tool.integrations.map((integration, index) => (
+                    <Badge key={index} variant="outline" className="justify-center py-2">
+                      {integration}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
             {/* Screenshots */}
             <Card className="bg-card/50 backdrop-blur-sm border border-border">
               <CardHeader>
-                <CardTitle>Screenshots</CardTitle>
+                <CardTitle>Application Screenshots</CardTitle>
               </CardHeader>
               <CardContent>
                 <Carousel className="w-full">
@@ -179,85 +258,86 @@ const ToolDetail = () => {
                 </Carousel>
               </CardContent>
             </Card>
-
-            {/* About */}
-            <Card className="bg-card/50 backdrop-blur-sm border border-border">
-              <CardHeader>
-                <CardTitle>About This Tool</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-foreground leading-relaxed">
-                  This tool represents the cutting edge of AI technology, designed to enhance productivity 
-                  and creativity within our organization. Our development team has carefully crafted 
-                  this solution to provide seamless integration with existing workflows while maintaining 
-                  the highest standards of performance and reliability.
-                </p>
-              </CardContent>
-            </Card>
           </div>
 
           <div className="space-y-6">
             {/* Team Members */}
             <Card className="bg-card/50 backdrop-blur-sm border border-border">
               <CardHeader>
-                <CardTitle>Team Members</CardTitle>
+                <CardTitle>Development Team</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                {tool.teamMembers.map((member, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <Avatar>
-                      <AvatarImage src={member.avatar} alt={member.name} />
-                      <AvatarFallback className="bg-violet-600 text-white">
-                        {member.initials}
-                      </AvatarFallback>
-                    </Avatar>
-                    <div>
-                      <div className="font-medium">{member.name}</div>
-                      <div className="text-muted-foreground text-sm">{member.role}</div>
+              <CardContent>
+                <div className="space-y-4">
+                  {tool.teamMembers.map((member, index) => (
+                    <div key={index} className="flex items-center space-x-3">
+                      <Avatar className="h-10 w-10">
+                        <AvatarImage src={member.avatar} alt={member.name} />
+                        <AvatarFallback className="bg-blue-500/20 text-blue-600">{member.initials}</AvatarFallback>
+                      </Avatar>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium truncate">{member.name}</p>
+                        <p className="text-xs text-muted-foreground">{member.role}</p>
+                      </div>
+                      <Button variant="ghost" size="sm" asChild>
+                        <a href={`mailto:${member.email}`}>
+                          <Mail className="h-4 w-4" />
+                        </a>
+                      </Button>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </CardContent>
             </Card>
 
-            {/* Contact Team */}
+            {/* Contact Information */}
             <Card className="bg-card/50 backdrop-blur-sm border border-border">
               <CardHeader>
-                <CardTitle>Contact Team</CardTitle>
+                <CardTitle>Support Contact</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <Button variant="outline" className="w-full justify-start bg-card/50 border-border hover:bg-accent">
-                  <Mail className="h-4 w-4 mr-2" />
-                  {tool.contactEmail}
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Tool Information */}
-            <Card className="bg-card/50 backdrop-blur-sm border border-border">
-              <CardHeader>
-                <CardTitle>Tool Information</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <div className="text-sm text-muted-foreground">Category</div>
-                  <Badge variant="secondary" className="bg-muted text-foreground border-border">
-                    {tool.category}
+              <CardContent className="space-y-3">
+                <div className="flex items-center">
+                  <Mail className="h-4 w-4 mr-3 text-muted-foreground" />
+                  <a href={`mailto:${tool.contactEmail}`} className="text-sm hover:text-blue-600 transition-colors">
+                    {tool.contactEmail}
+                  </a>
+                </div>
+                <div className="flex items-center">
+                  <User className="h-4 w-4 mr-3 text-muted-foreground" />
+                  <span className="text-sm">Owner: {tool.owner}</span>
+                </div>
+                <div className="pt-3 border-t border-border">
+                  <Badge className="w-full justify-center bg-blue-500/20 text-blue-600 border-blue-500/30">
+                    Internal Tool - No External Access
                   </Badge>
                 </div>
-                <div>
-                  <div className="text-sm text-muted-foreground">Status</div>
-                  <div className="font-medium">{tool.status}</div>
-                </div>
-                <div>
-                  <div className="text-sm text-muted-foreground">Classification</div>
-                  <Badge variant="outline" className="bg-yellow-500/20 text-yellow-600 border-yellow-500/30 dark:text-yellow-400">
+              </CardContent>
+            </Card>
+
+            {/* Compliance Info */}
+            <Card className="bg-card/50 backdrop-blur-sm border border-border">
+              <CardHeader>
+                <CardTitle>Compliance & Security</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm">Classification</span>
+                  <Badge className={classificationColors[tool.classification as keyof typeof classificationColors]}>
                     {tool.classification}
                   </Badge>
                 </div>
-                <div>
-                  <div className="text-sm text-muted-foreground">Last Updated</div>
-                  <div className="font-medium">{tool.lastUpdated}</div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm">Security Level</span>
+                  <Badge variant="outline">{tool.securityClearance}</Badge>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm">Data Residency</span>
+                  <Badge variant="outline">{tool.dataResidency}</Badge>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm">Uptime SLA</span>
+                  <Badge className="bg-green-500/20 text-green-600 border-green-500/30">
+                    {tool.uptime}
+                  </Badge>
                 </div>
               </CardContent>
             </Card>
