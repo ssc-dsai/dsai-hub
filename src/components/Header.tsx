@@ -61,11 +61,8 @@ const Header = () => {
 
       {/* Hero Section */}
       <div className="text-center">
-        <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-700 to-cyan-700 bg-clip-text text-transparent">
-          DSAI Hub
-        </h1>
-        <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-          Discover and access AI-powered tools to enhance your productivity and creativity.
+        <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+          Explore our collection of AI-powered tools designed to streamline your workflow, boost creativity, and accelerate innovation across teams.
         </p>
       </div>
     </div>
