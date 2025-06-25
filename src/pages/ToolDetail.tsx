@@ -53,7 +53,7 @@ const ToolDetail = () => {
         { name: 'Maya Patel', role: 'UX Designer', initials: 'MP', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face', email: 'maya.patel@company.com' }
       ],
       contactEmail: 'tasking-support@company.com',
-      screenshots: ['/screenshots/ssc-tasking.jpeg', '/screenshots/ssc-tasking.jpeg', '/screenshots/ssc-tasking.jpeg']
+      screenshots: ['/screenshots/ssc-tasking.jpeg', '/screenshots/ssc-tasking-briefing.png', '/screenshots/ssc-tasking-samples.png']
     },
     'pixieprompt': {
       title: 'PixiePrompt',
