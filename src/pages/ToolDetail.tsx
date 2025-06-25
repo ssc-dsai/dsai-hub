@@ -1,12 +1,12 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, Users, CheckCircle, Mail } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Users, CheckCircle } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { MessageSquare, PenTool, CheckSquare, Image, FileText, Cpu } from 'lucide-react';
+import { MessageSquare, PenTool, CheckSquare, Image, FileText, Cpu, UserCheck, Mail, Wand2, DollarSign } from 'lucide-react';
 
 const ToolDetail = () => {
   const { id } = useParams();
@@ -43,10 +43,10 @@ const ToolDetail = () => {
     },
     'ssc-tasking': {
       title: 'SSC Tasking',
-      description: 'AI-powered task management and workflow optimization tool that helps teams organize, prioritize, and track their work more effectively.',
+      description: 'SSC Tasking is an AI-powered document analysis platform that transforms uploaded files into intelligent briefings, enabling teams to quickly extract insights, generate executive summaries, and collaborate on document-heavy workflows through a modern, dark-mode enabled interface.',
       icon: CheckSquare,
       status: 'Beta' as const,
-      features: ['Smart task organization', 'Priority suggestions', 'Workflow automation', 'Team coordination', 'Progress tracking', 'Deadline alerts'],
+      features: ['Document analysis', 'Intelligent briefings', 'Executive summaries', 'Workflow collaboration', 'File transformation', 'Dark-mode interface'],
       userCount: 678,
       teamMembers: [
         { name: 'Alex Johnson', role: 'Product Manager', initials: 'AJ', avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face', email: 'alex.johnson@company.com' },
@@ -55,8 +55,8 @@ const ToolDetail = () => {
       contactEmail: 'tasking-support@company.com',
       screenshots: ['/screenshots/ssc-tasking.jpeg', '/screenshots/ssc-tasking-briefing.png', '/screenshots/ssc-tasking-samples.png']
     },
-    'pixieprompt': {
-      title: 'PixiePrompt',
+    'wishmaker': {
+      title: 'WishMaker',
       description: 'AI image generation tool for creating visuals, mockups, and design assets for internal presentations and materials. Currently in design phase.',
       icon: Image,
       status: 'Beta' as const,
@@ -66,7 +66,7 @@ const ToolDetail = () => {
         { name: 'Emma Zhang', role: 'Design Lead', initials: 'EZ', avatar: 'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=150&h=150&fit=crop&crop=face', email: 'emma.zhang@company.com' },
         { name: 'Tom Wilson', role: 'AI Researcher', initials: 'TW', avatar: 'https://images.unsplash.com/photo-1566492031773-4f4e44671d66?w=150&h=150&fit=crop&crop=face', email: 'tom.wilson@company.com' }
       ],
-      contactEmail: 'pixie-support@company.com',
+      contactEmail: 'wishmaker-support@company.com',
       screenshots: ['/screenshots/pixie-prompt.webp', '/screenshots/midjourney.webp', '/screenshots/pixie-prompt.webp']
     },
     'docwise': {
